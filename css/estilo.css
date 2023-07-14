@@ -1,0 +1,576 @@
+/* Posicionamiento --> static, absolute, relative, fixed.
+Modelo de caja (Box model) --> margin, border, padding, content.
+Tipografía --> tipos, tamaños de fuente, etc.
+Estilos visuales --> box-shadow, border-radius, gradient, etc.
+Otros --> misceláneos, reglas CSS y más.*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+    :root{
+        /*Colores*/
+        --bitcoin-orange: #F7931A;
+        --soft-orange:#FFE9D5;
+        --azul-secundario:#1A9AF7;
+        --azul-claro:#E7F5FF;
+        --negro-normal:#201E1C;
+        --negro-plus:#282623;
+        --gris:#BABABA;
+        --blanco-fuerte:#FAF8F7;
+        --blanco:#FFFFFF;
+    }
+    html{
+        font-size: 62.5%;
+        font-family: 'DM Sans', sans-serif;
+    }
+    header {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        min-width: 320px;
+        height: 334px;
+        text-align: center;
+        background: linear-gradient(207.8deg, var(--negro-normal) 16.69%, #F7931A 100%);
+    }
+    header figure {
+        width: 150px;
+        height: 24px;
+        margin-top: 60px;
+        align-self: center;
+    
+    }
+    header figure img{
+        width: 150px;
+        height: 150px;
+        z-index: 1;
+        background-image: linear-gradient(45deg, red, blue);
+        border-radius: 70px;
+        border: 2px solid var(--negro-normal) ;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    }
+    .header--titulo-contenedor {
+        width: 90%;
+        min-width: 280px; /*Se achica el width hasta 280 px*/
+        max-width: 900px; /* se agranda el width hasta los 900px*/
+        height: 280px;
+        margin-top: 130px;
+        text-align: center;
+        align-self: center;
+       
+    
+    }
+    .header--titulo-contenedor h1{
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var( --blanco-fuerte);
+    }
+    .header--titulo-contenedor p{
+        margin-top: 25px;
+        font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--soft-orange);
+    }
+    .header--titulo-contenedor .header--boton {
+        position: absolute;
+        left: calc(50% - 118px); /* calcula a la mitad menos 118 px*/
+        top: 270px;
+        display: block;
+        margin-top: 35px;
+        padding: 15px;
+        width: 233px;
+        height: 48px;
+        background-color: var(--blanco);
+        /*Sombra*/
+        box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+        border: none;
+        border-radius: 5px;
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: var(--negro-normal);
+    }
+    .header--boton span {
+        display: inline-block; /*convertimos en inline-block para porder darle dimensiones a la etiqueta a*/
+        width: 13px;
+        height: 8px;
+        margin-left: 1px;
+        background-image: url("./iconos/Vector-3.svg");
+    }
+    .seccion-primera{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 30px;
+        scroll-snap-align: center;
+    }
+    .seccion-primera figure {
+        width: 20vh;
+        height: 20vh;
+        align-self: center;
+        margin-top: 50px;
+    }
+    .seccion-primera figure img{
+        width: 100%;
+        height: 100%;
+    }
+    main{
+        width: 100%;
+        height: auto;
+        background-color: var(--blanco-fuerte);
+        min-width: 320px;
+    }
+  
+    .seccion-primera h1{
+        font-size: 2.4rem;
+        font-weight: bold;
+        text-align: center;
+        line-height: 2.6rem;
+        color: var(--negro-normal);
+    }
+    .seccion-primera p{
+        display: inline-block;
+        margin-top: 30px;
+        font-size: 1.4rem;
+        color: var(--gris);
+        line-height: 1.6rem;
+    }
+    .main--primera-detabla {
+        overflow-x: scroll;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
+        display: flex;
+        flex-direction: row;
+        height: 500px;
+    }
+    
+     main .main--primera-detabla .primera--titulo{
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+        font-weight: bold;
+        line-height: 2.3rem;
+        color: var(--bitcoin-orange);
+    }
+
+    .main--primera-contenedor-detabla {
+        width: 70%;
+        min-width: 235px;
+        max-width: 500px;
+        height: 360px;
+        font-family: 'Inter', sans-serif;
+    }
+    .main--primera-contenedor-detabla{
+       width: 90%;
+       min-width: 230px;
+       max-width: 300px;
+       height: 250px;
+       margin: 50px auto 0;
+       margin: 50px 50px 0;
+       font-family: 'Inter', sans-serif;
+    }
+    .main--primera-contenedor-detabla table{
+        width: 100%;
+        height: 100%;
+
+    }
+    .main--primera-contenedor-detabla td {
+        width: 50%;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.9rem;
+        color: var(--gris);
+        background-color: var(--blanco);
+    }
+    .main--primera-contenedor-detabla .table__top-left{
+        border-radius: 15px 0 0;
+    }
+    .main--primera-contenedor-detabla .table__top-right{
+        border-radius:  0 15px 0 0;
+    }
+
+    .main--primera-contenedor-detabla .table__buttom-left{
+        border-radius:  0 0 0 15px ;
+    }
+    .main--primera-contenedor-detabla .table__bottom-right {
+        border-radius:  0 0 15px 0;
+    }
+
+    .main--primera-contenedor-detabla .table__right span{
+        display: inline-block;
+        background-image: url('./iconos/trending-up\ 1.svg');
+        width: 15px;
+        height: 15px;
+        background-size: cover;
+        margin-left: 10px;
+    }
+    .main--primera-contenedor-detabla .table--right span{
+        display: inline-block;
+        background-image: url('./iconos/trending-up\ 1.svg');
+        width: 15px;
+        height: 15px;
+        background-size: cover;
+        margin-left: 10px;
+    }
+
+    .main--primera-contenedor-detabla .table--date{
+        width: 250px;
+        height: 30px;
+        margin: 0 auto;
+        margin-top: 15px;
+        padding: 10px;
+        background-color: var(--soft-orange);
+        border-radius: 8px;
+        align-self: center;
+    }
+
+    .main--primera-contenedor-detabla .table--date p{
+        margin: 7px;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        color: var(--negro-plus);
+        position: relative;
+        bottom: 100%;
+        font-weight: 300;
+        margin-bottom: 50px;
+    }
+
+
+    .main--segundo-contenedor-detabla{
+        width: 90%;
+        min-width: 230px;
+        max-width: 300px;
+        height: 250px;
+        margin: 50px 50px 0;
+     }
+     .main--segundo-contenedor-detabla table{
+        width: 100%;
+        height: 100%;
+
+    }
+    .main--segundo-contenedor-detabla td {
+        width: 50%;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.9rem;
+        color: var(--gris);
+        background-color: var(--blanco);
+    }
+    .main--segundo-contenedor-detabla .table--date{
+        width: 250px;
+        height: 30px;
+        margin: 0 auto;
+        margin-top: 15px;
+        padding: 10px;
+        background-color: var(--azul-claro);
+        border-radius: 8px;
+        align-self: center;
+    }
+    .main--segundo-contenedor-detabla .table--date p{
+        margin: 9px;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        color: var(--negro-plus);
+        position: relative;
+        bottom: 100%;
+        font-weight: 300;
+
+    }
+    .main--segundo-contenedor-detabla  #segundo--titulo{
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+        font-weight: bold;
+        line-height: 2.3rem;
+        color: var(--azul-secundario);
+    }
+    .main-productos-detalles {
+        position: relative; /*Este seria el relative del position absolute de la imagen*/
+        width: 100%;
+        min-width: 320px;
+        height: auto;
+        padding: 20px 10px;
+        background-color: var(--negro-plus);
+    }
+    .productos-detalles--batata-logo{
+        position: absolute; /*Se debe colocar un position relative en 
+        la seccion padre donde queremos que este el siguiente absolute 
+        si no podria saltarse a otro div o seccion o main y partir de ahi*/
+        background-image: url('./iconos/Group\ 16.svg');
+        width: 40px;
+        height: 25px;
+        top: -10px;
+        right: calc(50% - 40px);
+    }
+    .productos-detalles--titulo{
+        width: 90%;
+        min-width: 288px;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 50px;
+        text-align: center;
+        
+    }
+    .productos-detalles--titulo h2{
+        margin-bottom: 20px;
+        font-size: 2.4rem;
+        font-weight: bold;
+        line-height: 2.6rem;
+        color: var(--blanco-fuerte);
+
+    }
+    .productos-detalles--titulo p{
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.8rem;
+        color: var(--gris);
+    }
+
+
+    .reloj{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-bottom: 10px;
+        background-image: url("./iconos/clock\ 1.svg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .ojo{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-bottom: 10px;
+        background-image: url("./iconos/eye\ 1.svg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .pesos{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-bottom: 10px;
+        background-image: url("./iconos/dollar-sign\ 1.svg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .palomita{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-bottom: 10px;
+        background-image: url("./iconos/check-circle\ 1.svg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .productos--card-titulo{
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+        font-weight: bold;
+        line-height: 1.8rem;
+        color: var(--blanco-fuerte);
+        text-align: start;
+    }
+    
+    .productos--card-cuerpo{
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.8rem;
+        color: #808080;
+        text-align: start;
+    }
+
+    .main-productos-detalles .product-cards--container{
+        width: 90%;
+        min-width: 288px;
+        max-width: 400px;
+        height: 150px;
+        margin: 15px auto;
+        padding: 15px;
+        background-color: var(--negro-normal);
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+    }
+    .fotografia{
+        width: 100%;
+        min-width: 320px;
+        height: 50vh;
+        background-image: url("https://www.armadilloamarillo.com/wp-content/uploads/fondo-de-programacion-web_ok.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .fotografia h2{
+        color: var(--blanco-fuerte);
+        text-align: center;
+        font-size: 2.4rem;
+        font-weight: bold;
+        line-height: 2.6rem;
+    }
+
+    .contenedor-planes{
+        width: 100%;
+        min-width: 320px;
+        padding-bottom: 70px;
+        text-align: center;
+        scroll-snap-align: center;
+        justify-content: center;
+    }
+    .planes-titulo{
+        width: 90%;
+        min-width: 288px;
+        height: auto;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+    .planes-titulo h2{
+        padding-top: 50px;
+        font-size: 2.4rem;
+        font-weight: bold;
+        line-height: 2.6rem;
+        color: var(--negro-normal);
+    }
+
+    .planes-titulo p{
+        padding-top: 30px;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.8rem;
+        color: var(--gris);
+    }
+
+    .contenedor-planes-card{
+        position: relative;
+        width: 70%;
+        min-width: 230px;
+        max-width: 300px;
+        height: 250px;
+        margin: 50px auto 0;
+        padding: 0 15px;
+        background-color: var(--blanco-fuerte);
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(89, 73, 30, 0.16);
+    }
+    .recomendado{
+        position: absolute;
+        width: 120px;
+        height: 31px;
+        top: -15px;
+        left: calc(50% - 60px);
+        font-size: 1.2rem;
+        padding: 6px;
+        background-color: var(--bitcoin-orange);
+        border-radius: 8px;
+        color: var(--just-white);
+    }
+    .plan-card-titulo{
+        padding-top: 30px;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.8rem;
+        color: var(--negro-normal);
+    }
+    .plan-card-precio{
+        padding: 5px 0;
+    font-size: 5.2rem;
+    font-weight: bold;
+    line-height: 5.3rem;
+    color: var(--negro-normal);
+    }
+    .plan-card-precio sup{
+        font-size: 1.2rem;
+    font-weight: 300;
+    vertical-align: 25px;
+    }
+    .plan-card-des {
+        font-size: 1.2rem;
+        color: var(--gris);
+    }
+    .plan-card-boton{
+        width: 150px;
+    height: 48px;
+    margin-top: 20px;
+    background-color: #faf8f7;
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--negro-normal);
+    }
+    .plan-card-boton span{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-image: url("./iconos/arrow-right\ 1.svg");
+        vertical-align: text-bottom; /*Este nos ayuda par alinear el icono con el texto*/
+    }
+    .contenedor-planes-card{
+        position: relative;
+        scroll-snap-align: center; /* Esto es para la barra de desplazamiento que tiene que estar en el padre para centrar*/
+        margin: 50px 15px 0;
+    }
+    .contenedor-planes-slider{
+        text-align: center;
+        display: flex;
+        height: 316px;
+        overflow-x: scroll;/* Esto es para la barra de desplazamiento*/
+        overscroll-behavior-x: contain; /* Esto es para la barra de desplazamiento*/
+        scroll-snap-type: x proximity; /* Esto es para la barra de desplazamiento*/
+    }
+    #tarjeta-basica{
+        background: linear-gradient(207.8deg, #F7931A 16.69%, yellow 100%);
+    }
+    #tarjeta-recomendado{
+        background: linear-gradient(207.8deg, #17e671 16.69%, green 100%);
+    }
+    #tarjeta-populares{
+        background: linear-gradient(207.8deg, var(--azul-secundario) 16.69%, blue 100%);
+    }
+    #primero{
+        border-color: #F7931A;
+
+    }
+    #mitad{
+        border-color: #17e671;
+    }
+    #ultimo{
+        border-color: #1A9AF7;
+    }
+    footer {
+        display: flex;
+        width: 100%;
+        height: 150px;
+        background-color: var(--bitcoin-orange);
+    }
+    footer section {
+        display: flex;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+    }
+    footer .left ul {
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.8rem;
+        list-style: none;
+    }
+    .left li {
+        margin: 10px 0;
+    }
+    .left a {
+        text-decoration: none;
+        color: var(--just-white);
+    }
+
